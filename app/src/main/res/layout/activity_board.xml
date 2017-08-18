@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/wallpaper"
+tools:context="vvv.xogame.BoardActivity">
+tools:layout_editor_absoluteX="0dp"
+tools:layout_editor_absoluteY="25dp">
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/playerPlaying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <GridLayout
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_weight="1"
+        android:background="@drawable/grid"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <ImageView
+            android:id="@+id/A0"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_row="0"
+            android:onClick="click"
+            android:tag="0" />
+
+        <ImageView
+            android:id="@+id/B0"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:onClick="click"
+            android:tag="3" />
+
+        <ImageView
+            android:id="@+id/C0"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_row="2"
+            android:onClick="click"
+            android:tag="6" />
+
+        <ImageView
+            android:id="@+id/A1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_row="0"
+            android:onClick="click"
+            android:tag="1" />
+
+        <ImageView
+            android:id="@+id/B1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:onClick="click"
+            android:tag="4" />
+
+        <ImageView
+            android:id="@+id/C1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_row="2"
+            android:onClick="click"
+            android:tag="7" />
+
+        <ImageView
+            android:id="@+id/A2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_row="0"
+            android:onClick="click"
+            android:tag="2" />
+
+        <ImageView
+            android:id="@+id/B2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:onClick="click"
+            android:tag="5" />
+
+        <ImageView
+            android:id="@+id/C2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_row="2"
+            android:onClick="click"
+            android:tag="8" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_weight="1"
+        android:onClick="restart"
+        android:text="Restart"
+        android:visibility="invisible" />
+
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+
