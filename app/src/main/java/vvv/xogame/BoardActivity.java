@@ -38,7 +38,7 @@ public class BoardActivity extends AppCompatActivity {
         player2 = new Player(intent.getStringExtra("PLAYER2"), markP2);
 
         TextView playerPlaying = (TextView) findViewById(R.id.playerPlaying);
-        playerPlaying.setText(player1.getName());
+        playerPlaying.setText(player1.getName() + " is playing");
 
 //        Toast.makeText(this, player1.getName() + " vs " +player2.getName() , Toast.LENGTH_SHORT).show();
 
@@ -55,6 +55,7 @@ public class BoardActivity extends AppCompatActivity {
         TextView playerPlaying = (TextView) findViewById(R.id.playerPlaying);
         ImageView markView = (ImageView) view;
         Button restartBtn = (Button) findViewById(R.id.restart);
+
         int tappedLocation = Integer.parseInt(view.getTag().toString());
 
         if (tapped[tappedLocation] == 0) {
@@ -66,8 +67,8 @@ public class BoardActivity extends AppCompatActivity {
                 markView.setImageResource(R.drawable.xxx);
                 markView.animate().scaleX(1f).scaleY(1f).setDuration(500);
                 tapped[tappedLocation] = 1;
-                playerPlaying.setText(player2.getName());
-                player2.addMark(tappedLocation);
+                player1.addMark(tappedLocation);
+                playerPlaying.setText(player2.getName() + " is playing");
                 switchPlayer = false;
 
             } else {
@@ -75,8 +76,8 @@ public class BoardActivity extends AppCompatActivity {
                 markView.setImageResource(R.drawable.o);
                 markView.animate().scaleX(1f).scaleY(1f).setDuration(500);
                 tapped[tappedLocation] = 1;
-                playerPlaying.setText(player1.getName());
-                player1.addMark(tappedLocation);
+                playerPlaying.setText(player1.getName() + " is playing");
+                player2.addMark(tappedLocation);
                 switchPlayer = true;
 
             }
@@ -93,6 +94,7 @@ public class BoardActivity extends AppCompatActivity {
 
             } else if (Arrays.equals(tapped, tappedFull)){
                 restartBtn.setVisibility(View.VISIBLE);
+                playerPlaying.setText("DRAW");
             }
 
             if(theEnd) {
