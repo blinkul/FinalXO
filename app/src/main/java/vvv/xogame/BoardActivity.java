@@ -149,24 +149,55 @@ public class BoardActivity extends AppCompatActivity {
     private boolean isWinning(int[] playerBoard){
         boolean status = false;
 
-        int[][] winningOptions = {
-                {1,1,1,0,0,0,0,0,0},
-                {0,0,0,1,1,1,0,0,0},
-                {0,0,0,0,0,0,1,1,1},
-                {1,0,0,1,0,0,1,0,0},
-                {0,1,0,0,1,0,0,1,0},
-                {0,0,1,0,0,1,0,0,1},
-                {1,0,0,0,1,0,0,0,1},
-                {0,0,1,0,1,0,1,0,0}
-        };
+//        int[][] winningOptions = {
+//                {1,1,1,0,0,0,0,0,0},
+//                {0,0,0,1,1,1,0,0,0},
+//                {0,0,0,0,0,0,1,1,1},
+//                {1,0,0,1,0,0,1,0,0},
+//                {0,1,0,0,1,0,0,1,0},
+//                {0,0,1,0,0,1,0,0,1},
+//                {1,0,0,0,1,0,0,0,1},
+//                {0,0,1,0,1,0,1,0,0}
+//        };
+//
+//        for(int i = 0; i < winningOptions.length; i++) {
+//
+//
+//            if (Arrays.equals(playerBoard, winningOptions[i])) {
+//                status = true;
+//            }
+//
+//        }
 
-        for(int i = 0; i < winningOptions.length; i++) {
+        // 0 1 2
+        // 3 4 5
+        // 6 7 8
 
+        if(playerBoard[0]==1 && playerBoard[1]==1 && playerBoard[2]==1){
+            status = true;
+        }
+        if(playerBoard[3]==1 && playerBoard[4]==1 && playerBoard[5]==1){
+            status = true;
+        }
+        if(playerBoard[6]==1 && playerBoard[7]==1 && playerBoard[8]==1){
+            status = true;
+        }
 
+        if(playerBoard[0]==1 && playerBoard[3]==1 && playerBoard[6]==1){
+            status = true;
+        }
+        if(playerBoard[1]==1 && playerBoard[4]==1 && playerBoard[7]==1){
+            status = true;
+        }
+        if(playerBoard[2]==1 && playerBoard[5]==1 && playerBoard[8]==1){
+            status = true;
+        }
 
-            if (Arrays.equals(playerBoard, winningOptions[i])) {
-                status = true;
-            }
+        if(playerBoard[0]==1 && playerBoard[4]==1 && playerBoard[8]==1){
+            status = true;
+        }
+        if(playerBoard[2]==1 && playerBoard[4]==1 && playerBoard[6]==1){
+            status = true;
         }
 
         return status;
